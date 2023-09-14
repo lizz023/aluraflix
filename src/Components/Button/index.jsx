@@ -12,12 +12,11 @@ const Btn = styled.button`
     padding: 14px;
 `
 
-
 const Button = (props) => {
     return(
-    <Btn>
-        {props.children}
-    </Btn>
+        <Btn>
+            {props.children}
+        </Btn>
     ) 
 }
 

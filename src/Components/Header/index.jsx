@@ -15,10 +15,6 @@ const LogoImg = styled.img`
     width: 168px;
 `
 
-const BtnHeader =  styled.button`
-    
-`
-
 const Header = () => {
     return (
         <StyledHeader>
