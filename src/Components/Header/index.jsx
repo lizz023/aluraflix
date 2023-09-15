@@ -4,11 +4,16 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../../assets/img/LogoMain.png"
 
+const NavContainer = styled.div`
+    background-color: #000;
+`
+
 const StyledHeader = styled.nav`
     align-items: center;
-    background-color: #000;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1136px;
     padding: 20px 40px;
 `
 const LogoImg = styled.img`
@@ -17,7 +22,8 @@ const LogoImg = styled.img`
 
 const Header = () => {
     return (
-        <StyledHeader>
+        <NavContainer>
+            <StyledHeader>
             <Link to={"/"}>
                 <LogoImg src={Logo} alt="logo" />
             </Link>
@@ -27,6 +33,9 @@ const Header = () => {
                 </Link>
             </div>
         </StyledHeader>
+
+        </NavContainer>
+        
     )
 }
 
