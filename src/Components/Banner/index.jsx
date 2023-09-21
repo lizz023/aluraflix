@@ -17,6 +17,7 @@ const ImgBanner = styled.img`
 const BannerDescription = styled.div`
     align-items: center;
     display: flex;
+    
     gap: 30px;
     max-width: 1136px;
     height: 100%;
@@ -49,7 +50,6 @@ const Banner = () => {
                     width="580px"
                     height="300px"
                     controls
-                    playing
                     volume="0.4"
                 />
             </BannerDescription>
