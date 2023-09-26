@@ -6,15 +6,18 @@ import Home from './Pages/Home'
 import NewVideo from './Pages/NewVideo'
 
 
+
 function App() {
 
   return (
     <Router>
       <GlobalStyle/>
       <Header/>
+     
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/newVideo' element={<NewVideo/>}/>
+        <Route path='/newCategoria' element={<NewCategoria/>}/>
       </Routes>
       <Footer/>
     </Router>

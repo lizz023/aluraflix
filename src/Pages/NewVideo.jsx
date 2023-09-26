@@ -3,6 +3,8 @@ import CampoTexto from "../Components/CampoTexto";
 import styled from "styled-components";
 import Categorias from "../Components/Categorias";
 import Button from "../Components/Button";
+import { ColorScheme } from "../Variables/ColorScheme";
+
 // import { Button } from "@mui/material";
 
 
@@ -55,11 +57,13 @@ const NewVideo = (props) => {
                     required
                 />
 
-                <Button >
+                <Button backgroundColor={ColorScheme.blue} color ={ColorScheme.white}>
                     Guardar
                 </Button>
 
-                <Button>Limpiar</Button>
+                
+
+                <Button backgroundColor={ColorScheme.grey} color ={ColorScheme.black}>Limpiar</Button>
 
                 {/* <Button>Guardar</Button>
                 <Button variant="contained" size="large">Guardar</Button>

@@ -3,7 +3,7 @@ import Button from "../Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../../assets/img/LogoMain.png"
-import Banner from "../Banner";
+
 
 const NavContainer = styled.div`
     background-color: #000;
@@ -21,6 +21,11 @@ const LogoImg = styled.img`
     width: 168px;
 `
 
+const ButtonsContainer = styled.div`
+    display: flex;
+    gap: 20px;
+`
+
 const Header = () => {
     return (
         <NavContainer>
@@ -28,13 +33,17 @@ const Header = () => {
                 <Link to={"/"}>
                     <LogoImg src={Logo} alt="logo" />
                 </Link>
-                <div>
+                <ButtonsContainer>
                     <Link to={"/newVideo"}>
-                        <Button>Nuevo Video</Button>
+                        <Button>Nuevo Video</Button> 
                     </Link>
-                </div>
+
+                    <Link to={"/newCategoria"}>
+                        <Button>Nueva Categoria</Button>
+                    </Link>
+                </ButtonsContainer>
             </StyledHeader>
-            <Banner/>
+           
 
         </NavContainer>
         
