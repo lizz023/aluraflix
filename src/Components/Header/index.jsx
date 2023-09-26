@@ -3,6 +3,7 @@ import Button from "../Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../../assets/img/LogoMain.png"
+import Banner from "../Banner";
 
 const NavContainer = styled.div`
     background-color: #000;
@@ -24,15 +25,16 @@ const Header = () => {
     return (
         <NavContainer>
             <StyledHeader>
-            <Link to={"/"}>
-                <LogoImg src={Logo} alt="logo" />
-            </Link>
-            <div>
-                <Link>
-                    <Button>Nuevo Video</Button>
+                <Link to={"/"}>
+                    <LogoImg src={Logo} alt="logo" />
                 </Link>
-            </div>
-        </StyledHeader>
+                <div>
+                    <Link to={"/newVideo"}>
+                        <Button>Nuevo Video</Button>
+                    </Link>
+                </div>
+            </StyledHeader>
+            <Banner/>
 
         </NavContainer>
         
