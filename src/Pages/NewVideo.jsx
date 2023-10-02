@@ -1,11 +1,7 @@
-import React, { useState } from "react";
-import CampoTexto from "../Components/CampoTexto";
+import React from "react";
 import styled from "styled-components";
-import Categorias from "../Components/Categorias";
-import Button from "../Components/Button";
-import { ColorScheme } from "../Variables/ColorScheme";
-
-// import { Button } from "@mui/material";
+import FormularioVideos from "../Components/FormularioVideos";
+import { useState } from "react";
 
 
 const MainContainer = styled.section`
@@ -14,67 +10,68 @@ const MainContainer = styled.section`
     padding: 40px;
 `
 
-const NewVideo = (props) => {
+const categorias = [
+    {
+    
+    titulo: "Programación",
+    colorPrimario: "##6BD1FF",
+    colorSecundario: "#D9F7E9"
+    },
+    {
+    
+    titulo: "Front End",
+    colorPrimario: "#00C86F",
+    colorSecundario: "#E8F8FF"
+    },
+    {
+    
+    titulo: "Data Science",
+    colorPrimario: "#FF8C2A",
+    colorSecundario: "#F0F8E2"
+    },
+    {
+    
+    titulo: "Devops",
+    colorPrimario: "#E06B69",
+    colorSecundario: "#FDE7E8"
+    },
+    {
+    
+    titulo: "Ux y Diseño",
+    colorPrimario: "#DB6EBF",
+    colorSecundario: "#FAE9F5"
+    },
+    {
+    
+    titulo: "Móvil",
+    colorPrimario: "#FFBA05",
+    colorSecundario: "#FFF5D9"
+    },
+    {
+    
+    titulo: "Innovación y Gestión",
+    colorPrimario: "#FF8A29",
+    colorSecundario: "#FFEEDF"
+    }, 
+];
 
-    const [title, setTitle] = useState("");
-    const [link, setLink] = useState("");
-    const [categoria, setCategoria] = useState("");
-    const [descripcion, setDescripcion] = useState("");
 
+const NewVideo = () => {
+    const [cardVideo, setVideo] = useState([]);
 
-    const manejoEvento = (e) => {
-        e.preventDefault()
+    const registroVideo = (video) => {
+
+        console.log("Nuevo video", video)
+        setVideo([...cardVideo, video ])
     }
 
     return (
         <MainContainer>
-            <form onSubmit={manejoEvento}>
-                <h3>Nuevo Video</h3>
-                <CampoTexto
-                    id = "Title"
-                    label = "Titulo"
-                    valor = {title}
-                    actualizarValor = {setTitle}
-                    required
-                />
-                <CampoTexto
-                    id = "linkVideo"
-                    label = "Link del video"
-                    valor = {link}
-                    actualizarValor ={setLink}
-                    required
-                />
-                <Categorias
-                    valor={categoria}
-                    actualizarCategoria ={setCategoria}
-                    equipos = {props.equipos}
-                />
-                <CampoTexto
-                    id ="description"
-                    label ="Descripción"
-                    valor = {descripcion}
-                    actualizarValor={setDescripcion}
-                    required
-                />
+            <FormularioVideos 
+                categorias ={categorias.map((categoria) => categoria.titulo)}
+                registroVideo = {registroVideo}
 
-                <Button backgroundColor={ColorScheme.blue} color ={ColorScheme.white}>
-                    Guardar
-                </Button>
-
-                
-
-                <Button backgroundColor={ColorScheme.grey} color ={ColorScheme.black}>Limpiar</Button>
-
-                {/* <Button>Guardar</Button>
-                <Button variant="contained" size="large">Guardar</Button>
-                <Button variant="contained" size="large">Limpiar</Button> */}
-
-                
-
-
-
-            
-            </form>
+            />
         </MainContainer>
     )
 }

@@ -37,7 +37,7 @@ const Banner = () => {
 
             <BannerDescription>
                 <Paragraph>
-                    <h1>Programación web</h1>
+                    {/* <h1>Programación web</h1> */}
                     Este challenge es una forma de arendizaje. Es un mecanismo donde podrás 
                     comprometerte en la resolución de un problema para poder aplicar todos 
                     los conocimientos adquiridos en la formación React. Lorem, ipsum dolor sit amet consectetur 
@@ -50,7 +50,7 @@ const Banner = () => {
                     width="580px"
                     height="300px"
                     controls
-                    volume="0.4"
+                    volume={0.3}
                 />
             </BannerDescription>
         </BannerContainer>

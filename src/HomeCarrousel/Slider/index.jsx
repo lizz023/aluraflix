@@ -1,71 +1,110 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
+import VideoCard from "../VideoCard";
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "black"}}
+      style={{ ...style, display: "block", background: "black" }}
       onClick={onClick}
     />
   );
 }
 
 const CarruselContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   max-width: 1136px;
   margin: 0 auto;
   padding: 25px 65px;
 `
 
-export default class SimpleSlider extends Component {
-  render() {
-    const settings = {
-      className: "center",
-      centerMode: true,
-      infinite: true,
-      centerPadding: "100px",
-      slidesToShow: 3,
-      speed: 500,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SampleNextArrow />,
+const TitleContainer = styled.h2`
+  background-color: blue;
+  display: inline;
+`
 
-    };
-    return (
+
+const SlideRemote = (props) => {
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "100px",
+    slidesToShow: 3,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SampleNextArrow />,
+  };
+
+  const { colorPrimario, colorSecundario, titulo } = props.datos
+
+  const color = {
+    backgroundColor: colorPrimario
+  }
+
+  const borderCard = {
+    border: colorSecundario
+  }
+
+  console.log("ghoks");
+
+  // const slidesAmount = props.videoCards > 1 ? Math.min(3, props.videoCards - 1) : 1;
+
+  return (
+    <div id="mycarousel">
       <CarruselContainer>
-        <h2> Single Item</h2>
-        <Slider {...settings}>
+        <div>
+          <TitleContainer style={color}>
+            {titulo}
+          </TitleContainer>
+        </div>
+
+
+        <Slider {...settings} > {/* slidesToShow={slidesAmount} */}
           <div>
-            <h3>Hlaa elia abie nei pegro</h3>
+            <div style={{ margin: '0 8px' }}>
+              <VideoCard />
+            </div>
           </div>
+
           <div>
-            <h3>Hlaa elia abie nei pegro</h3>
+            <div style={{ margin: '0 8px' }}>
+              <VideoCard />
+            </div>
           </div>
+
           <div>
-            <h3>Hlaa elia abie nei pegro
-              
-            </h3>
+            <div style={{ margin: '0 8px' }}>
+              <VideoCard />
+            </div>
           </div>
+
           <div>
-            <h3>Hlaa elia abie nei pegro
-              
-            </h3>
-          </div>
+            <div style={{ margin: '0 8px' }}>
+              <VideoCard />
+            </div>
+          </div> 
+
           <div>
-            <h3>Hlaa elia abie nei pegro
-              
-            </h3>
-          </div>
-          <div>
-            <h3>Hlaa elia abie nei pegro
-              
-            </h3>
+            <div style={{ margin: '0 8px' }}>
+              <VideoCard />
+            </div>
           </div>
         </Slider>
       </CarruselContainer>
-    );
-  }
+    </div>
+  )
+
 }
+
+
+export default SlideRemote;

@@ -4,7 +4,7 @@ import React from "react";
 
 const Categorias = (props) => {
 
-    const equipos = [
+    const categorias = [
         "Programación",
         "Fron End",
         "Data Science",
@@ -30,9 +30,9 @@ const Categorias = (props) => {
             margin="normal"
         >
     
-            {equipos.map((equipo, index) => (
-                <MenuItem key={index} value={equipo} >
-                {equipo}
+            {categorias.map((categoria, index) => (
+                <MenuItem key={index} value={categoria} >
+                {categoria}
                 </MenuItem>
           ))}
 
