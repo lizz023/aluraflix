@@ -17,17 +17,26 @@ const ImgBanner = styled.img`
 const BannerDescription = styled.div`
     align-items: center;
     display: flex;
-    
     gap: 30px;
     max-width: 1136px;
     height: 100%;
     padding: 40px;
     position: absolute;
+
+    @media (min-width: 360px) {
+        flex-wrap: wrap;
+    }
 `
 const Paragraph = styled.p`
     color: #000;
     text-align: justify;
-    width: 600px;
+    /* width: 600px; */
+    max-width: 50%;
+
+    @media (min-width: 360px){
+        font-size: 13px;
+        max-width: 100%;
+    }
 `
 
 const Banner = () => {
@@ -45,10 +54,11 @@ const Banner = () => {
                     consectetur ea facilis expedita perferendis corporis, reprehenderit voluptatem alias fugit. Cum, illo.
                 </Paragraph>
 
+
                 <ReactPlayer 
                     url={"https://www.youtube.com/watch?v=rnmbxqS1nRo"}
-                    width="580px"
-                    height="300px"
+                    width="100%"
+                    height="270px"
                     controls
                     volume={0.3}
                 />
