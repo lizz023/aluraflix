@@ -17,25 +17,50 @@ const ImgBanner = styled.img`
 const BannerDescription = styled.div`
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 30px;
     max-width: 1136px;
     height: 100%;
     padding: 40px;
     position: absolute;
 
-    @media (min-width: 360px) {
-        flex-wrap: wrap;
+    @media (min-width: 1136px) {
+        flex-wrap: nowrap;
+        padding: 40px;
+    }
+
+    @media (min-width: 768px) {
+        flex-wrap: nowrap;
     }
 `
 const Paragraph = styled.p`
     color: #000;
     text-align: justify;
-    /* width: 600px; */
-    max-width: 50%;
+    max-width: 100%;
 
-    @media (min-width: 360px){
+    @media (min-width: 1136px){
         font-size: 13px;
-        max-width: 100%;
+        max-width: 50%;
+    }
+
+    @media (min-width: 768px){
+        
+        max-width: 50%;
+    }
+`
+const Player = styled.div`
+
+    @media (min-width:360px) {
+        display: none;
+    }
+
+    @media (min-width:768px) {
+        display: flex;
+    }
+
+    @media (min-width:1136px) {
+        display: flex;
     }
 `
 
@@ -54,14 +79,16 @@ const Banner = () => {
                     consectetur ea facilis expedita perferendis corporis, reprehenderit voluptatem alias fugit. Cum, illo.
                 </Paragraph>
 
-
-                <ReactPlayer 
+                <Player>
+                    <ReactPlayer 
                     url={"https://www.youtube.com/watch?v=rnmbxqS1nRo"}
                     width="100%"
                     height="270px"
                     controls
                     volume={0.3}
-                />
+                    />
+                </Player>
+                
             </BannerDescription>
         </BannerContainer>
     )

@@ -36,7 +36,7 @@ const SlideRemote = (props) => {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "100px",
+    centerPadding: "20px",
     slidesToShow: 3,
     speed: 500,
     autoplay: false,
@@ -65,6 +65,7 @@ const SlideRemote = (props) => {
       {
         breakpoint: 360,
         settings: {
+          
           slidesToShow: 1,
           slidesToScroll: 1
         }
