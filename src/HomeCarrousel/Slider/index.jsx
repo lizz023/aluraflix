@@ -21,7 +21,11 @@ const CarruselContainer = styled.div`
   gap: 20px;
   max-width: 1136px;
   margin: 0 auto;
-  padding: 25px 65px;
+  padding: 25px 47px;
+
+  @media (min-width: 768px){
+    padding: 25px 65px;
+  }
 `
 
 const TitleContainer = styled.h2`
@@ -47,7 +51,7 @@ const SlideRemote = (props) => {
     centerPadding: "20px",
     slidesToShow: 3,
     speed: 500,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SampleNextArrow />,
