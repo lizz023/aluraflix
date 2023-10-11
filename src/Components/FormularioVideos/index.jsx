@@ -1,7 +1,9 @@
-import {Button} from "@mui/material";
+// import {Button} from "@mui/material";
 import CampoTexto from "../CampoTexto";
 import { useState } from "react";
 import Categorias from "../Categorias";
+import Button from "../Button";
+import { ColorScheme } from "../../Variables/ColorScheme";
 
 
 const FormularioVideos= (props) => {
@@ -55,23 +57,26 @@ const FormularioVideos= (props) => {
                 actualizarValor={setDescripcion}
                 required
             />
-{/* 
+
+            {/* <Button variant="contained" color="primary" size="large">
+                Guardar
+            </Button>
+
+            <Button variant="contained" color="inherit" size="large">
+                Limpiar
+            </Button> */}
+
+            
             <Button backgroundColor={ColorScheme.blue} color ={ColorScheme.white}>
                 Guardar
             </Button>
 
             <Button backgroundColor={ColorScheme.grey} color ={ColorScheme.black}>
                 Limpiar
-            </Button> */}
+            </Button>
 
            
-                <Button variant="contained" color="primary" size="large">
-                    Guardar
-                </Button>
-
-                <Button variant="contained" color="inherit" size="large">
-                    Limpiar
-                </Button>
+                
           
 
         </form>
