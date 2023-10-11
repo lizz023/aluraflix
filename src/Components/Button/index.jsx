@@ -7,10 +7,19 @@ const Btn = styled.button`
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 14px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px;
     color: ${props => props.color || ColorScheme.white};
+
+    @media (min-width: 1136px){
+        font-size: 16px;
+        font-weight: 600;
+        padding: 14px;
+    }
+    @media (min-width: 768px){
+        padding: 14px;
+    }
 `
 
 const Button = (props) => {

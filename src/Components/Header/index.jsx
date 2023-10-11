@@ -16,14 +16,28 @@ const StyledHeader = styled.nav`
     margin: 0 auto;
     max-width: 1136px;
     padding: 20px 40px;
+
+    @media (min-width: 360px){
+        gap: 20px;
+        padding: 20px 20px;
+    }
 `
 const LogoImg = styled.img`
-    width: 168px;
+    width: 120px;
+
+    @media (min-width: 768px){
+        width: 168px;
+    }
+    
 `
 
 const ButtonsContainer = styled.div`
     display: flex;
-    gap: 20px;
+    gap: 10px;
+
+    @media (min-width: 1136px){
+        gap: 20px
+    }
 `
 
 const Header = () => {
