@@ -70,7 +70,7 @@ const SlideRemote = (props) => {
         }
       },
       {
-        breakpoint: 360,
+        breakpoint: 480,
         settings: {
           
           slidesToShow: 1,
