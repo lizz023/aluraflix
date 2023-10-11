@@ -46,7 +46,7 @@ const SlideRemote = (props) => {
     centerPadding: "20px",
     slidesToShow: 3,
     speed: 500,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SampleNextArrow />,
