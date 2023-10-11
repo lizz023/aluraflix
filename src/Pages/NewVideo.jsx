@@ -14,7 +14,7 @@ const categorias = [
     {
     
     titulo: "Programación",
-    colorPrimario: "##6BD1FF",
+    colorPrimario: "#6BD1FF",
     colorSecundario: "#D9F7E9"
     },
     {

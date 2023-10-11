@@ -25,8 +25,15 @@ const CarruselContainer = styled.div`
 `
 
 const TitleContainer = styled.h2`
-  background-color: blue;
+  background-color: #6BD1FF;
   display: inline;
+  font-size: 12px;
+  padding: 10px;
+  
+
+  @media (min-width: 768px){
+
+  }
 `
 
 
