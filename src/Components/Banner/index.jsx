@@ -10,19 +10,23 @@ const BannerContainer = styled.section`
 `
 
 const ImgBanner = styled.img`
-    height: 400px;
+    height: 240px;
     object-fit: cover;
     width: 100%;
+    @media (min-width: 768px){
+        height: 400px; 
+    }
 `
 const BannerDescription = styled.div`
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    font-size: 13px;
     justify-content: space-between;
     gap: 30px;
     max-width: 1136px;
     height: 100%;
-    padding: 40px;
+    padding: 20px;
     position: absolute;
 
     @media (min-width: 1136px) {
@@ -32,6 +36,8 @@ const BannerDescription = styled.div`
 
     @media (min-width: 768px) {
         flex-wrap: nowrap;
+        font-size: 17px;
+        padding: 40px;
     }
 `
 const Paragraph = styled.p`

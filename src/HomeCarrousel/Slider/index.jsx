@@ -26,13 +26,14 @@ const CarruselContainer = styled.div`
 
 const TitleContainer = styled.h2`
   background-color: #6BD1FF;
+  border-radius: 3px;
   display: inline;
   font-size: 12px;
   padding: 10px;
   
 
   @media (min-width: 768px){
-
+    font-size: 17px;
   }
 `
 
@@ -62,11 +63,11 @@ const SlideRemote = (props) => {
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          initialSlide: 3
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
         }
       },
       {
