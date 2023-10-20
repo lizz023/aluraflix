@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import FormularioVideos from "../Components/FormularioVideos";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 
 const MainContainer = styled.section`
@@ -10,54 +11,61 @@ const MainContainer = styled.section`
     padding: 40px;
 `
 
-const categorias = [
-    {
-    
-    titulo: "Programación",
-    colorPrimario: "#6BD1FF",
-    colorSecundario: "#D9F7E9"
-    },
-    {
-    
-    titulo: "Front End",
-    colorPrimario: "#00C86F",
-    colorSecundario: "#E8F8FF"
-    },
-    {
-    
-    titulo: "Data Science",
-    colorPrimario: "#FF8C2A",
-    colorSecundario: "#F0F8E2"
-    },
-    {
-    
-    titulo: "Devops",
-    colorPrimario: "#E06B69",
-    colorSecundario: "#FDE7E8"
-    },
-    {
-    
-    titulo: "Ux y Diseño",
-    colorPrimario: "#DB6EBF",
-    colorSecundario: "#FAE9F5"
-    },
-    {
-    
-    titulo: "Móvil",
-    colorPrimario: "#FFBA05",
-    colorSecundario: "#FFF5D9"
-    },
-    {
-    
-    titulo: "Innovación y Gestión",
-    colorPrimario: "#FF8A29",
-    colorSecundario: "#FFEEDF"
-    }, 
-];
-
-
 const NewVideo = () => {
     const [cardVideo, setVideo] = useState([]);
+
+    //Categorias y colores
+const [categorias, setCategorias] = useState([
+    {
+        id: uuidv4(),
+        titulo: "Programación",
+        colorPrimario: "#6BD1FF",
+    },
+    {   
+        id: uuidv4(),
+        titulo: "Front End",
+        colorPrimario: "#00C86F",
+    },
+    {   
+        id: uuidv4(),
+        titulo: "Data Science",
+        colorPrimario: "#FF8C2A",
+    },
+    {   
+        id: uuidv4(),
+        titulo: "Devops",
+        colorPrimario: "#E06B69",
+    },
+    {
+        id: uuidv4(),
+        titulo: "Ux y Diseño",
+        colorPrimario: "#DB6EBF",
+    },
+    {
+        id: uuidv4(),
+        titulo: "Móvil",
+        colorPrimario: "#FFBA05",
+    },
+    {
+        id: uuidv4(),
+        titulo: "Innovación y Gestión",
+        colorPrimario: "#FF8A29",
+    }, 
+]);
+
+const actualizarColor = (color, id) => {
+    console.log("Actualizar: ", color, id);
+
+    const categoriasActualizadas = categorias.map((categoria) => {
+      if(categoria.id === id){
+        categoria.colorPrimario = color
+      }
+
+      return categoria;
+    })
+
+    setCategorias(categoriasActualizadas);
+  }
 
     const registroVideo = (video) => {
 
@@ -70,6 +78,7 @@ const NewVideo = () => {
             <FormularioVideos 
                 categorias ={categorias.map((categoria) => categoria.titulo)}
                 registroVideo = {registroVideo}
+                actualizarColor = {actualizarColor}
 
             />
         </MainContainer>

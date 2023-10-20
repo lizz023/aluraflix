@@ -12,14 +12,15 @@ const NavContainer = styled.div`
 const StyledHeader = styled.nav`
     align-items: center;
     display: flex;
+    gap: 30px;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1136px;
-    padding: 20px 40px;
+    padding: 20px;
 
-    @media (min-width: 360px){
+    @media (min-width: 768px){
         gap: 20px;
-        padding: 20px 20px;
+        padding: 20px 40px;
     }
 `
 const LogoImg = styled.img`

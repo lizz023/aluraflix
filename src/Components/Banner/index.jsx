@@ -42,16 +42,16 @@ const BannerDescription = styled.div`
 `
 const Paragraph = styled.p`
     color: #000;
+    font-size: 13px;
     text-align: justify;
     max-width: 100%;
 
     @media (min-width: 1136px){
-        font-size: 13px;
-        max-width: 50%;
+        font-size: 21px;
     }
 
     @media (min-width: 768px){
-        
+        font-size: 17px;
         max-width: 50%;
     }
 `
